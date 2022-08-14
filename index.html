@@ -13,11 +13,10 @@
     <main id="main">
         <h1 id="main-heading">Event Handler</h1>
         <!-- Option 1 -->
-        <button onclick="document.body.style.backgroundColor='violet'">Violet</button>
-
+        <button id="bg-violet" onclick="document.body.style.backgroundColor='violet'">Violet</button>
 
         <!-- Option 2 -->
-        <button onclick="bgBlue()">Blue</button>
+        <button id="bg-blue" onclick="bgBlue()">Blue</button>
 
         <!-- Option 3.1 -->
         <button id="bg-skyblue">Skyblue</button>
@@ -33,10 +32,42 @@
 
         <!-- Final -->
         <button id="bg-red">Red</button>
+
+        <!-- ********************************************* -->
+
+        <h2>Used Procedure</h2>
+        <pre id="procedure">
+
+        </pre>
+
     </main>
 
-    <script src="./js/event.js"></script>
+
     <script>
+
+        // Body Style
+        const bodyStyle = document.getElementById('main').style;
+        bodyStyle.width = '70%';
+        bodyStyle.margin = 'auto';
+
+        document.getElementById('main-heading').style.textAlign = 'center';
+
+        // Button Style
+        const items = document.getElementsByTagName('button');
+        for (const item of items) {
+            item.style.margin = '5px';
+            item.style.padding = '5px 20px';
+            item.style.width = '10em';
+        }
+
+        // Pre Tag Style
+        const preTag = document.getElementById('procedure');
+        preTag.style.fontSize = '1rem';
+
+        // Option 1
+        // <button id="bg-violet" onclick="document.body.style.backgroundColor='violet'">Violet</button>
+
+
         // Option 2 (**********)
         function bgBlue() {
             document.body.style.backgroundColor = 'blue';
@@ -75,19 +106,140 @@
             document.body.style.backgroundColor = 'red';
         });
 
-        // Button Style
-        const items = document.getElementsByTagName('button');
-        for (const item of items) {
-            item.style.margin = '5px';
-            item.style.padding = '5px 20px';
-            item.style.width = '10em';
+        // Raw Code *************************************************************************
+
+        // Option 1
+        const bgViolet = document.getElementById('bg-violet');
+        bgViolet.onmouseover = bgVioletInfo;
+        function bgVioletInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 1 -->
+            
+            <!-- Inside HTML -->
+
+            <button id="bg-violet" onclick="document.body.style.backgroundColor='violet'">Violet</button>
+            `;
         }
 
-        const bodyStyle = document.getElementById('main').style;
-        bodyStyle.width = '70%';
-        bodyStyle.margin = 'auto';
+        // Option 2
+        const bgBlue2 = document.getElementById('bg-blue');
+        bgBlue2.onmouseover = bgBlueInfo;
+        function bgBlueInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 2 -->
 
-        document.getElementById('main-heading').style.textAlign = 'center';
+            <!-- Inside HTML -->
+            <button id="bg-blue" onclick="bgBlue()">Blue</button>
+
+            <!-- Inside Script -->
+            function bgBlue() {
+                document.body.style.backgroundColor = 'blue';
+            }
+            `;
+        }
+
+        // Option 3.1
+
+        bgSkyblue.onmouseover = bgSkyBlueInfo;
+        function bgSkyBlueInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 3.1 -->
+
+            <!-- Inside HTML -->
+            <button id="bg-skyblue">Skyblue</button>
+
+            <!-- Inside Script -->
+            const bgSkyblue = document.getElementById('bg-skyblue');
+            bgSkyblue.onclick = bgSkyblueFunc;
+
+            function bgSkyblueFunc() {
+            document.body.style.backgroundColor = 'skyblue';
+            }
+            `;
+        }
+
+        // Option 3.2
+
+        bgGreen.onmouseover = bgGreenInfo;
+        function bgGreenInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 3.2 -->
+
+            <!-- Inside HTML -->
+            <button id="bg-green">Green</button>
+
+            <!-- Inside Script -->
+            const bgGreen = document.getElementById('bg-green');
+            bgGreen.onclick = function bgGreenFunc() {
+            document.body.style.backgroundColor = 'green';
+            }
+            `;
+        }
+
+        // Option 4.1
+
+        bgYellow.onmouseover = bgYellowInfo;
+        function bgYellowInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 3.2 -->
+
+            <!-- Inside HTML -->
+            <button id="bg-yellow">Yellow</button>
+
+            <!-- Inside Script -->
+            const bgYellow = document.getElementById('bg-yellow');
+            bgYellow.addEventListener('click', bgYellowFunc);
+
+            function bgYellowFunc() {
+            document.body.style.backgroundColor = 'yellow';
+            }
+            `;
+        }
+
+        // Option 4.2
+
+        bgOrange.onmouseover = bgOrangeInfo;
+        function bgOrangeInfo() {
+            preTag.innerText =
+                `
+            <!-- Option 4.2 -->
+
+            <!-- Inside HTML -->
+            <button id="bg-orange">Orange</button>
+
+            <!-- Inside Script -->
+            const bgOrange = document.getElementById('bg-orange');
+            bgOrange.addEventListener('click', function bgOrangeFunc() {
+            document.body.style.backgroundColor = 'orange';
+            });
+            }
+            `;
+        }
+
+        // Final
+
+        const bgRed = document.getElementById('bg-red');
+        bgRed.onmouseover = bgRedInfo;
+        function bgRedInfo() {
+            preTag.innerText =
+                `
+            <!-- Option Final -->
+
+            <!-- Inside HTML -->
+            <button id="bg-red">Red</button>
+
+            <!-- Inside Script -->
+            document.getElementById('bg-red').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'red';
+            });
+            `;
+        }
+
     </script>
 </body>
 
