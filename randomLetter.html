@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        div {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        button {
+            width: 50vw;
+            height: 30vw;
+            background-color: antiquewhite;
+            border-radius: 30px;
+            border: 1px solid antiquewhite;
+        }
+
+        #letter {
+            font-size: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="letter" onclick="randLetter()">Aa</button>
+    </div>
+
+    <script>
+        const arr = ['Aa', 'Bb', 'Cc', 'Dd', 'Ee', 'Ff', 'Gg', 'Hh', 'Ii', 'Jj', 'Kk', 'Ll', 'Mm', 'Nn', 'Oo', 'Pp', 'Qq', 'Rr', 'Ss', 'Tt', 'Uu', 'Vv', 'Ww', 'Xx', 'Yy', 'Zz'];
+        function randLetter() {
+            let letter = arr[Math.round(Math.random() * 25)]
+            console.log(letter);
+            document.getElementById('letter').innerText = letter;
+        }
+    </script>
+</body>
+
+</html>

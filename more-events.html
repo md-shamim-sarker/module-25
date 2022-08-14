@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>More Events</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        div {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 15px;
+        }
+
+        input {
+            width: 50vw;
+            height: 5vh;
+        }
+
+        #btn {
+            padding: 10px 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./image/logo.png" alt="logo">
+        <input id="text-field" type="text">
+        <button id="btn">Search</button>
+    </div>
+    <script>
+        document.getElementById('text-field').addEventListener('focus', function () {
+            console.log('.addEventListener, focus');
+        });
+
+        document.getElementById('text-field').addEventListener('blur', function () {
+            console.log('.addEventListener, blur');
+        });
+
+        document.getElementById('text-field').addEventListener('keydown', function (event) {
+            console.log(event.target.value, 'keydown');
+        });
+
+        document.getElementById('text-field').addEventListener('keypress', function (event) {
+            console.log(event.target.value, 'keypress');
+        });
+
+        document.getElementById('text-field').addEventListener('keyup', function (event) {
+            console.log(event.target.value, 'keyup');
+        });
+
+        document.getElementById('btn').addEventListener('mousedown', function () {
+            console.log('mousedown');
+        });
+
+        document.getElementById('btn').addEventListener('mouseenter', function () {
+            console.log('mouseenter');
+        });
+
+        document.getElementById('btn').addEventListener('mouseleave', function () {
+            console.log('mouseleave');
+        });
+
+        document.getElementById('btn').addEventListener('mousemove', function () {
+            console.log('mousemove');
+        });
+
+        document.getElementById('btn').addEventListener('mouseout', function () {
+            console.log('mouseout');
+        });
+
+        document.getElementById('btn').addEventListener('mouseover', function () {
+            console.log('mouseover');
+        });
+
+        document.getElementById('btn').addEventListener('mouseup', function () {
+            console.log('mouseup');
+        });
+    </script>
+</body>
+
+</html>
